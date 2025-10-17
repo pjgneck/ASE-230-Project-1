@@ -1,0 +1,191 @@
+#######################################################
+## 👥 Users APIs
+#######################################################
+
+
+
+### 🔐 SIGNUP
+POST http://localhost/signup
+Content-Type: application/json
+
+{
+  "username": "newUser",
+  "password": "passward1234556",
+  "department": "IT"
+}
+
+### 🔐 LOGIN (get token)
+POST http://localhost/login
+Content-Type: application/json
+
+{
+"username": "newUser",
+  "password": "updatedPassword"
+}
+
+### 👥 GET ALL USERS
+GET http://localhost/users
+Authorization: Bearer a1f016c36972f5bf29e6e24d8533d5bf
+
+
+
+### 👤 GET USER BY ID
+GET http://localhost/users/3
+Authorization: Bearer a1f016c36972f5bf29e6e24d8533d5bf
+
+
+
+### ✏️ UPDATE USER
+PUT http://localhost/users/2
+Authorization: Bearer a1f016c36972f5bf29e6e24d8533d5bf
+Content-Type: application/json
+
+{
+  "username": "newUser",
+  "password": "updatedPassword",
+  "department_id": "4"
+}
+
+
+### 🗑️ DELETE USER
+DELETE http://localhost/users/3
+Authorization: Bearer a1f016c36972f5bf29e6e24d8533d5bf
+
+
+
+
+#######################################################
+## 🏢 Department APIs
+#######################################################
+
+### 🏢 GET ALL DEPARTMENTS (filtered by token)
+GET http://localhost/department
+Authorization: Bearer a1f016c36972f5bf29e6e24d8533d5bf
+
+
+### 🏢 GET DEPARTMENT BY ID
+GET http://localhost/department/4
+Authorization: Bearer a1f016c36972f5bf29e6e24d8533d5bf
+
+
+### ➕ ADD DEPARTMENT
+POST http://localhost/department
+Authorization: Bearer a1f016c36972f5bf29e6e24d8533d5bf
+Content-Type: application/json
+
+{
+  "name": "Human Resources"
+}
+
+
+### ✏️ UPDATE DEPARTMENT
+PUT http://localhost/department/2
+Authorization: Bearer a1f016c36972f5bf29e6e24d8533d5bf
+Content-Type: application/json
+
+{
+  "name": "Accounting"
+}
+
+
+### 🗑️ DELETE DEPARTMENT
+DELETE http://localhost/department/3
+Authorization: Bearer a1f016c36972f5bf29e6e24d8533d5bf
+
+
+
+#######################################################
+## 📦 Inventory APIs
+#######################################################
+
+### 📦 GET ALL INVENTORIES
+GET http://localhost/inventory
+Authorization: Bearer a1f016c36972f5bf29e6e24d8533d5bf
+
+
+### 🏷️ GET INVENTORY BY ID
+GET http://localhost/inventory/1
+Authorization: Bearer a1f016c36972f5bf29e6e24d8533d5bf
+
+
+### 🏢 GET INVENTORIES BY DEPARTMENT
+GET http://localhost/inventory/department/1
+Authorization: Bearer a1f016c36972f5bf29e6e24d8533d5bf
+
+
+### ➕ ADD INVENTORY
+POST http://localhost/inventory
+Authorization: Bearer a1f016c36972f5bf29e6e24d8533d5bf
+Content-Type: application/json
+
+{
+  "name": "New Warehouse",
+  "department_id": 4
+}
+
+
+### ✏️ UPDATE INVENTORY
+PUT http://localhost/inventory/1
+Authorization: Bearer a1f016c36972f5bf29e6e24d8533d5bf
+Content-Type: application/json
+
+{
+  "name": "Updated Warehouse",
+  "department_id": 1
+}
+
+
+### 🗑️ DELETE INVENTORY
+DELETE http://localhost/inventory/1
+Authorization: Bearer a1f016c36972f5bf29e6e24d8533d5bf
+
+
+
+#######################################################
+## 🧰 Item APIs
+#######################################################
+
+### 🧾 GET ALL ITEMS
+GET http://localhost/item
+Authorization: Bearer a1f016c36972f5bf29e6e24d8533d5bf
+
+
+### 🧾 GET ITEM BY ID
+GET http://localhost/item/4
+Authorization: Bearer a1f016c36972f5bf29e6e24d8533d5bf
+
+
+### 📦 GET ITEMS BY INVENTORY
+GET http://localhost/item/inventory/4
+Authorization: Bearer a1f016c36972f5bf29e6e24d8533d5bf
+
+
+
+### ➕ ADD ITEM
+POST http://localhost/item
+Authorization: Bearer a1f016c36972f5bf29e6e24d8533d5bf
+Content-Type: application/json
+
+{
+  "name": "Office Chair",
+  "quantity": 10,
+  "inventory_id": 5
+}
+
+
+
+### ✏️ UPDATE ITEM
+PUT http://localhost/item/4
+Authorization: Bearer a1f016c36972f5bf29e6e24d8533d5bf
+Content-Type: application/json
+
+{
+  "name": "Chair",
+  "quantity": 15
+}
+
+
+
+### 🗑️ DELETE ITEM
+DELETE http://localhost/item/5
+Authorization: Bearer a1f016c36972f5bf29e6e24d8533d5bf
